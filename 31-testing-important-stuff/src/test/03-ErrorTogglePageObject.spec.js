@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import ErrorToggle from "@/components/ErrorToggle.vue";
-import ErrorPageObject from "@/__page_objects__/errorPageObject";
+import ErrorPageObject from "@/pageobjects/errorPageObject";
 
 describe("Error Toggle", () => {
   it("should toggle contact message when button is clicked", async () => {
