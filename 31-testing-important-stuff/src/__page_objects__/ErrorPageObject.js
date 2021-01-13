@@ -18,6 +18,6 @@ export default class ErrorPageObject {
   }
 
   clickToggleButton() {
-    this.wrapper.find("#toggle-message").trigger("click");
+    this.wrapper.find(['data-test-id="toggle-message"]').trigger("click");
   }
 }

@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>There's been an error</h1>
-    <button id="toggle-message" @click="toggleMessage">
+    <button
+      id="toggle-message"
+      data-test-id="toggle-message"
+      @click="toggleMessage"
+    >
       Toggle more information
     </button>
     <ErrorMessage data-test-id="message" v-if="open" :msg="msg" />
