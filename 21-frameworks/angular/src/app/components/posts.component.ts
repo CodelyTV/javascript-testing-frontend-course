@@ -20,7 +20,6 @@ export class PostsComponent {
   posts = [];
   
   createPost(data) {
-    console.log(this)
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
         body: JSON.stringify(data),
