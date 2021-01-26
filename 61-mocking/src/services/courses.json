@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "makefiles",
+    "title": "🐂 Makefiles",
+    "img": "makefiles.jpg",
+    "description": "El centralizar tareas de nuestras aplicaciones es algo muy importante, y con los Makefiles se simplifica mucho.",
+    "progress": 99,
+    "date": "2020-11-01T00:00:00.000Z"
+  },
+
+  {
+    "slug": "monitoring-con-prometheus",
+    "title": "🔥 Monitoring con Prometheus",
+    "img": "prometheus.jpg",
+    "description": "La observabilidad es una de las cosas más importantes de la programación y el Monitoring uno de sus principales pilares.",
+    "progress": 100,
+    "date": "2020-06-02T00:00:00.000Z"
+  },
+  {
+    "slug": "bash-scripting-productividad",
+    "title": "💻 Bash para el día a día: Scripting & Productividad",
+    "img": "bash.jpg",
+    "description": "Aprende a usar la navaja suiza de los programadores 😬",
+    "progress": 92,
+    "date": "2020-07-01T00:00:00.000Z"
+  },
+  {
+    "slug": "notion",
+    "title": "🌈 Notion: Productividad en equipo",
+    "img": "notion.jpg",
+    "description": "Centraliza toda la documentación de tu equipo de trabajo y la gestión de tareas en 1 única herramienta: Notion.",
+    "progress": 39,
+    "date": "2020-01-01T00:00:00.000Z"
+  },
+  {
+    "slug": "dotfiles",
+    "title": "🚀 Todo sobre los dotfiles",
+    "img": "dotfiles.jpg",
+    "description": "Aprende a automatizar, centralizar y compartir todas tus configuraciones gracias a los dotfiles.",
+    "progress": 4,
+    "date": "2020-01-01T00:00:00.000Z"
+  },
+  {
+    "slug": "github-actions",
+    "title": "🤖 Automatiza tu flujo de trabajo con GitHub Actions",
+    "img": "github-actions-automatizacion.jpg",
+    "description": "Crearemos nuestras propias actions (¡hasta publicaremos alguna en el Marketplace!) que nos puedan ser muy útiles en nuestro día a día.",
+    "progress": 0,
+    "date": "2018-01-01T00:00:00.000Z"
+  },
+  {
+    "slug": "iterm",
+    "title": "💻 💨 Productividad con iTerm: Terminal macOS",
+    "img": "iterm-productividad.jpg",
+    "description": "Veremos cómo tener una terminal rapidísima y muy productiva gracias a unos simple (y escondidos) tips.",
+    "progress": 86,
+    "date": "2019-01-01T00:00:00.000Z"
+  },
+  {
+    "slug": "terminal-zsh",
+    "title": "💻 Terminal 100% productiva con Zsh",
+    "img": "terminal-zsh.jpg",
+    "description": "Consigue ser un Productivity Raptor™️ con tu terminal gracias a Zsh, Oh My Zsh, Zim y funciones avanzadas.",
+    "progress": 100,
+    "date": "2019-05-15T00:00:00.000Z"
+  },
+  {
+    "slug": "integracion-continua-github-actions",
+    "title": "🤖 Integración Continua con GitHub Actions",
+    "img": "github-actions-integracion-continua.jpg",
+    "description": "¡Consigue una Integración Continua de la que te puedas fiar y que sea rapidísima! Gracias a GitHub Actions veremos como lograrlo.",
+    "progress": 44,
+    "date": "2019-09-23T00:00:00.000Z"
+  },
+  {
+    "slug": "exprimiendo-intellij",
+    "title": "⚡ Exprimiendo IntelliJ",
+    "img": "intellij.jpg",
+    "description": "¡Mejora tu productividad exprimiendo IntelliJ! Consigue un aspecto minimalista, crea ficheros con plantillas personalizadas, atajos secretos, y mucho más.",
+    "progress": 23,
+    "date": "2020-06-05T00:00:00.000Z"
+  },
+  {
+    "slug": "ddd-java",
+    "title": "☕ DDD en Java",
+    "img": "ddd-java.jpg",
+    "description": "Crea paso a paso tu aplicación Java siguiendo Domain-Driven Design. Estructura de carpetas, integración con BD, sistema de colas, CQRS y más.",
+    "progress": 10,
+    "date": "2020-09-15T00:00:00.000Z"
+  },
+  {
+    "slug": "ddd-php",
+    "title": "🐘 DDD en PHP",
+    "img": "ddd-en-php.jpg",
+    "description": "Crea paso a paso tu aplicación PHP siguiendo Domain-Driven Design. Estructura de carpetas, integración con BD, sistema de colas, CQRS y más.",
+    "progress": 40,
+    "date": "2020-12-05T00:00:00.000Z"
+  }
+]
