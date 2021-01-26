@@ -1,0 +1,17 @@
+.appear-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.appear-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 3000ms, transform 3000ms;
+}
+.appear-exit {
+  opacity: 1;
+}
+.appear-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 3000ms, transform 3000ms;
+}
