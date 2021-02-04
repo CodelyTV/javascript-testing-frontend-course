@@ -1,19 +1,19 @@
 <template>
-  <header>
-    <Login />
-  </header>
-  <Comments />
+  <div>
+    <Header />
+    <Comments />
+  </div>
 </template>
 
 <script>
 import Comments from "./components/Comments.vue";
-import Login from "./components/Login.vue";
+import Header from "./components/Header.vue";
 
 export default {
   name: "App",
   components: {
     Comments,
-    Login
+    Header
   }
 };
 </script>
