@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen, waitForElementToBeRemoved } from "./test-utils";
-import userFactory from "./factories/user";
+import { generateUser } from "./factories/user";
 import Login from "../components/Login";
 import { login } from "../services/userRepository";
 
@@ -9,7 +9,7 @@ jest.mock("../services/userRepository");
 
 describe("When the user is not logged and clicks the login button", () => {
   it("should see their profile picture", async () => {
-    const user = userFactory.build();
+    const user = generateUser();
     login.mockResolvedValue(user);
 
     render(Login);
@@ -23,7 +23,7 @@ describe("When the user is not logged and clicks the login button", () => {
 
 describe("When the user is logged and clicks the logout button", () => {
   it("should not render their profile picture", async () => {
-    const user = userFactory.build();
+    const user = generateUser();
 
     render(Login, {
       initialState: {

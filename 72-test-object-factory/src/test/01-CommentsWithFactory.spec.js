@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "./test-utils";
-import commentFactory from "./factories/comment";
-import userFactory from "./factories/user";
+import { generateCommentList } from "./factories/comment";
+import { generateUser } from "./factories/user";
 import Comments from "../components/Comments";
 import { getAllComments, createComment } from "../services/commentsRepository";
 
@@ -10,7 +10,7 @@ jest.mock("../services/commentsRepository");
 
 describe("When a user lands on page", () => {
   it("should render the comments", async () => {
-    const commentsList = commentFactory.buildList(1);
+    const commentsList = generateCommentList();
 
     getAllComments.mockResolvedValueOnce(commentsList);
 
@@ -34,7 +34,7 @@ describe("When the user is logged", () => {
   it("should render the form to post new comments", async () => {
     render(Comments, {
       initialState: {
-        user: userFactory.build()
+        user: generateUser()
       }
     });
 
@@ -50,7 +50,7 @@ describe("When the user is logged", () => {
 
       render(Comments, {
         initialState: {
-          user: userFactory.build()
+          user: generateUser()
         }
       });
 
