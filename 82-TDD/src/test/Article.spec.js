@@ -33,7 +33,7 @@ describe("Article component", () => {
 
       render(Article);
 
-      const comment = screen.getByText(commentList[0].body);
+      const comment = await screen.findByText(commentList[0].body);
       expect(comment).toBeInTheDocument();
     });
   });
