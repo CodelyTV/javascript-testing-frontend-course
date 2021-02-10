@@ -43,6 +43,9 @@ export default {
       });
     }, 5000);
   },
+  beforeUnmount() {
+    clearInterval(this.pollingInterval);
+  },
 };
 </script>
 

@@ -10,6 +10,9 @@ jest.mock("../services/articlesRepository");
 jest.mock("../services/commentsRepository");
 
 describe("Article component", () => {
+  beforeAll(() => jest.useFakeTimers());
+  afterAll(() => jest.useRealTimers());
+
   it("should display the article content", async () => {
     const article = generateArticle();
     getArticle.mockResolvedValueOnce(article);
@@ -56,7 +59,6 @@ describe("Article component", () => {
   });
 
   it("should update courses", async () => {
-    jest.useFakeTimers();
     const commentList = generateCommentList();
     getAllComments.mockResolvedValue([]);
     getArticle.mockResolvedValueOnce(generateArticle());
@@ -70,11 +72,9 @@ describe("Article component", () => {
 
     const comment = await screen.findByText(commentList[0].title);
     expect(comment).toBeInTheDocument();
-    jest.useRealTimers();
   });
 
   it("should stop retrieving comments when the component is unmounted", async () => {
-    jest.useFakeTimers();
     getAllComments.mockResolvedValue([]);
     getArticle.mockResolvedValueOnce(generateArticle());
 
@@ -86,6 +86,5 @@ describe("Article component", () => {
     jest.runOnlyPendingTimers();
 
     expect(getAllComments).not.toHaveBeenCalled();
-    jest.useRealTimers();
   });
 });
