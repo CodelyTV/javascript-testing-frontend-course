@@ -2,9 +2,12 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/vue";
 import Article from "@/components/Article";
 import { getArticle } from "@/services/articlesRepository";
+import { getAllComments } from "@/services/commentsRepository";
 import { generateArticle } from "./factories/article";
+import { generateCommentList } from "./factories/comment";
 
 jest.mock("../services/articlesRepository");
+jest.mock("../services/commentsRepository");
 
 describe("Article component", () => {
   it("should display the article content", async () => {
@@ -20,5 +23,18 @@ describe("Article component", () => {
 
     const content = screen.getByText(article.body);
     expect(content).toBeInTheDocument();
+  });
+
+  describe("when there are comments", () => {
+    it("should display the comments content", async () => {
+      const commentList = generateCommentList();
+      getAllComments.mockResolvedValueOnce(commentList);
+      getArticle.mockResolvedValueOnce(generateArticle());
+
+      render(Article);
+
+      const comment = screen.getByText(commentList[0].body);
+      expect(comment).toBeInTheDocument();
+    });
   });
 });
