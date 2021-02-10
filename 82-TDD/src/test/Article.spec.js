@@ -56,8 +56,9 @@ describe("Article component", () => {
   });
 
   it("should update courses", async () => {
+    jest.useFakeTimers();
     const commentList = generateCommentList();
-    getAllComments.mockResolvedValueOnce([]);
+    getAllComments.mockResolvedValue([]);
     getArticle.mockResolvedValueOnce(generateArticle());
 
     render(Article);
@@ -65,9 +66,10 @@ describe("Article component", () => {
     const message = await screen.findByText(/there are no comments/i);
     expect(message).toBeInTheDocument();
 
-    getAllComments.mockResolvedValueOnce(commentList);
+    getAllComments.mockResolvedValue(commentList);
 
     const comment = await screen.findByText(commentList[0].title);
     expect(comment).toBeInTheDocument();
+    jest.useRealTimers();
   });
 });
