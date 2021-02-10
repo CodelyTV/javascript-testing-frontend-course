@@ -26,6 +26,7 @@ export default {
     return {
       article: null,
       comments: null,
+      pollingInterval: null,
     };
   },
   async created() {
@@ -36,6 +37,11 @@ export default {
 
     this.article = article;
     this.comments = comments;
+    this.pollingInterval = setInterval(() => {
+      getAllComments(this.postId).then(comments => {
+        this.comments = comments;
+      });
+    }, 5000);
   },
 };
 </script>
