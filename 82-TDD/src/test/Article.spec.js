@@ -33,8 +33,13 @@ describe("Article component", () => {
 
       render(Article);
 
-      const comment = await screen.findByText(commentList[0].body);
-      expect(comment).toBeInTheDocument();
+      await screen.findByRole("heading", { name: "Comments" });
+
+      commentList.forEach(comment => {
+        expect(screen.getByText(comment.title)).toBeInTheDocument();
+        expect(screen.getByText(comment.username)).toBeInTheDocument();
+        expect(screen.getByText(comment.body)).toBeInTheDocument();
+      });
     });
   });
 });
