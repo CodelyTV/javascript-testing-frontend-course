@@ -54,4 +54,20 @@ describe("Article component", () => {
       expect(message).toBeInTheDocument();
     });
   });
+
+  it("should update courses", async () => {
+    const commentList = generateCommentList();
+    getAllComments.mockResolvedValueOnce([]);
+    getArticle.mockResolvedValueOnce(generateArticle());
+
+    render(Article);
+
+    const message = await screen.findByText(/there are no comments/i);
+    expect(message).toBeInTheDocument();
+
+    getAllComments.mockResolvedValueOnce(commentList);
+
+    const comment = await screen.findByText(commentList[0].title);
+    expect(comment).toBeInTheDocument();
+  });
 });
