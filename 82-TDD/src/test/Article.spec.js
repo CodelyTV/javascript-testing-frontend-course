@@ -42,4 +42,16 @@ describe("Article component", () => {
       });
     });
   });
+
+  describe("when there are no comments", () => {
+    it("should display a no comments message", async () => {
+      getAllComments.mockResolvedValueOnce([]);
+      getArticle.mockResolvedValueOnce(generateArticle());
+
+      render(Article);
+
+      const message = await screen.findByText(/there are no comments/i);
+      expect(message).toBeInTheDocument();
+    });
+  });
 });

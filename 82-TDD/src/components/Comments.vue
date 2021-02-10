@@ -1,7 +1,14 @@
 <template>
   <section class="comments">
     <h2>Comments</h2>
-    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" />
+    <template v-if="comments.length">
+      <Comment
+        v-for="comment in comments"
+        :key="comment.id"
+        :comment="comment"
+      />
+    </template>
+    <div v-else>There are no comments</div>
   </section>
 </template>
 
