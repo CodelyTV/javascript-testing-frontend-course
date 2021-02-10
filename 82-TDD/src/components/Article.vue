@@ -29,8 +29,13 @@ export default {
     };
   },
   async created() {
-    this.article = await getArticle(this.postId);
-    this.comments = await getAllComments(this.postId);
+    const [article, comments] = await Promise.all([
+      getArticle(this.postId),
+      getAllComments(this.postId),
+    ]);
+
+    this.article = article;
+    this.comments = comments;
   },
 };
 </script>
