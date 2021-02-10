@@ -72,4 +72,20 @@ describe("Article component", () => {
     expect(comment).toBeInTheDocument();
     jest.useRealTimers();
   });
+
+  it("should stop retrieving comments when the component is unmounted", async () => {
+    jest.useFakeTimers();
+    getAllComments.mockResolvedValue([]);
+    getArticle.mockResolvedValueOnce(generateArticle());
+
+    const { unmount } = render(Article);
+
+    unmount();
+    getAllComments.mockClear();
+
+    jest.runOnlyPendingTimers();
+
+    expect(getAllComments).not.toHaveBeenCalled();
+    jest.useRealTimers();
+  });
 });
