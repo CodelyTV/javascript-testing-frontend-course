@@ -6,7 +6,7 @@ function Posts() {
   const [posts, setPosts] = useState([]);
 
   function submit(data) {
-    createPost(data);
+    createPost(data).then((newPost) => setPosts([newPost, ...posts]));
   }
 
   useEffect(() => {
